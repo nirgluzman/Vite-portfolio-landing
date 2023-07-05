@@ -35,21 +35,15 @@ function Header() {
           <span className='text-red-500'> GLUZMAN</span>
         </h2>
       </div>
-      <div className='hidden md:flex gap-4'>
+      <div className='hidden gap-4 md:flex'>
         {menuList.map((item, index) => (
           <div key={index}>
-            <h2
-              className='text-white 
-                    hover:border-[1px] border-red-500 rounded-full
-                    text-[15px] px-3 py-1 cursor-pointer'>
+            <h2 className='cursor-pointer rounded-full border border-transparent px-3 py-1 text-[15px] text-white hover:border-red-500'>
               {item.title}
             </h2>
           </div>
         ))}
-        <h2
-          className='text-white 
-                    hover:border-[1px] border-red-500 rounded-full
-                    text-[15px] px-3 py-1 cursor-pointer hover:bg-gradient-to-r from-red-500 to-red-800 '>
+        <h2 className='cursor-pointer rounded-full border border-transparent from-red-500 to-red-800 px-3 py-1 text-[15px] text-white hover:border-red-500 hover:bg-gradient-to-r'>
           HIRE ME
         </h2>
       </div>
@@ -57,12 +51,12 @@ function Header() {
         {!toggle ? (
           <HiBars3BottomRight
             onClick={() => setToggle(!toggle)}
-            className='text-white text-[24px] cursor-pointer'
+            className='cursor-pointer text-[24px] text-white'
           />
         ) : (
           <HiOutlineXMark
             onClick={() => setToggle(!toggle)}
-            className='text-white text-[24px] cursor-pointer'
+            className='cursor-pointer text-[24px] text-white'
           />
         )}
         {toggle ? <MenuOverlay menuList={menuList} /> : null}
